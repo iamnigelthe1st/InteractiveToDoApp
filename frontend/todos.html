@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/todos.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>My Todo List</h1>
+            <button id="logout-btn" class="btn btn-outline-danger">Logout</button>
+        </div>
+        
+        <!-- Todo form -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <form id="todo-form">
+                    <div class="input-group">
+                        <input type="text" id="new-todo" class="form-control" placeholder="Add a new task..." required>
+                        <button class="btn btn-primary" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Todo list -->
+        <div class="card">
+            <div class="card-body">
+                <ul id="todo-list" class="list-group">
+                    <!-- Todos will be loaded here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/todos.js"></script>
+    <script>
+        // Immediate auth check
+        if (!localStorage.getItem('auth_token')) {
+            window.location.href = '/signin.html';
+        }
+    </script>
+</body>
+</html>

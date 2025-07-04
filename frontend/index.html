@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #4cc9f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(67, 97, 238, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-desc {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .app-preview {
+            margin: 4rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero animate__animated animate__fadeIn">
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <span>Todo-Demo</span>
+            </div>
+            <h1>Organize Your Work & Life</h1>
+            <p class="tagline">
+                The simple, beautiful task manager that helps you stay productive 
+                and organized without the overwhelm.
+                <br>
+                By iamnigelthe1st
+                <br>
+            </p>
+            <div class="cta-buttons">
+                <a href="signin.html" class="btn btn-primary">Sign In</a>
+                <a href="signup.html" class="btn btn-secondary">Get Started Free</a>
+            </div>
+        </div>
+
+        <div class="app-preview animate__animated animate__fadeInUp">
+            <!-- Placeholder for app screenshot -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; display: flex; justify-content: center; align-items: center; color: white; font-size: 1.5rem;">
+                App Preview
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card animate__animated animate__fadeIn" style="animation-delay: 0.1s">
+                <div class="feature-icon">📝</div>
+                <h3 class="feature-title">Simple Task Management</h3>
+                <p class="feature-desc">
+                    Add, organize, and complete tasks with our intuitive interface designed for focus.
+                </p>
+            </div>
+            
+            <div class="feature-card animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+                <div class="feature-icon">⏱️</div>
+                <h3 class="feature-title">Smart Reminders</h3>
+                <p class="feature-desc">
+                    Never miss a deadline with customizable reminders and due dates.
+                </p>
+            </div>
+            
+            <div class="feature-card animate__animated animate__fadeIn" style="animation-delay: 0.3s">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Available Everywhere</h3>
+                <p class="feature-desc">
+                    Access your tasks from any device, anytime. Fully responsive design.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

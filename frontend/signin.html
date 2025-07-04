@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Modern ToDo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --error: #f72585;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark);
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background-color: #f8fafc;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+            background-color: white;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .btn {
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+        }
+
+        .auth-footer {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .auth-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .auth-link:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            display: none;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .divider::before {
+            margin-right: 1rem;
+        }
+
+        .divider::after {
+            margin-left: 1rem;
+        }
+
+        .social-auth {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container animate__animated animate__fadeIn">
+        <div class="auth-card">
+            <div class="logo">
+                <span>✓</span>
+                <span>Modern ToDo</span>
+            </div>
+            <h1>Welcome Back</h1>
+            
+            <form class="auth-form" id="signin-form">
+                <div class="input-group">
+                    <span class="input-icon">✉️</span>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                
+                <div class="input-group">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                
+                <div class="auth-footer">
+                    Don't have an account? <a href="signup.html" class="auth-link">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            let isValid = true;
+            
+            // Reset errors
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            if (!email.includes('@')) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email';
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+                document.getElementById('password-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Here you would typically call your authentication API
+                console.log('Signing in with:', { email, password });
+                // window.location.href = 'todos.html'; // Redirect on success
+            }
+        });
+    </script>
+</body>
+</html>
