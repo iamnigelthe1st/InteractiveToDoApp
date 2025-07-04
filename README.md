@@ -2,7 +2,9 @@ Here's a modern, visually enhanced version of your README with icons and improve
 
 # 🚀 Modern To-Do App
 
-![Todo App Screenshot](https://prnt.sc/BMAEoYBMDJpp)  
+![Todo App Screenshot]
+![127 0 0 1_5500_todo-app_frontend_index html](https://github.com/user-attachments/assets/f2316c4f-0e24-4d44-baa3-a088ec7198ef)
+
 *A sleek, productive task management experience*
 
 ## 🌟 Overview
@@ -80,7 +82,9 @@ Access the app at: [http://localhost:3000](http://localhost:3000)
 
 | Login Screen | Dashboard |
 |--------------|-----------|
-| ![Login](https://prnt.sc/_R0bJuXEVVNl) | ![SignUp](https://prnt.sc/rLvG8c3FAHa0) |
+| ![Login]![127 0 0 1_5500_todo-app_frontend_signin html](https://github.com/user-attachments/assets/e82a1a6e-1893-43f5-bfd0-b26bc0740a9d)
+ | ![SignUp] ![127 0 0 1_5500_todo-app_frontend_signup html](https://github.com/user-attachments/assets/b4a72973-82d4-4a6d-a7c1-1e09f19f65ab)
+ |
 
 ## 🤝 Contributing
 
